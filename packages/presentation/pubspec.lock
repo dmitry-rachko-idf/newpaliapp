@@ -53,8 +53,8 @@ packages:
   domain:
     dependency: "direct main"
     description:
-      path: "/Users/dmitrij/develop/newpaliApp/packages/domain"
-      relative: false
+      path: "../domain"
+      relative: true
     source: path
     version: "1.0.0+1"
   fake_async:

@@ -1,4 +1,4 @@
-import 'package:domain/checking.dart';
+import 'package:domain/checking_if_palindrome.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late TextEditingController _palindrome;
   bool _result = true;
-  Checking checking = Checking();
+  CheckingIfPalindrome checking = CheckingIfPalindrome();
 
   @override
   void initState() {

@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   presentation:
-    path: /Users/dmitrij/develop/newpaliApp/packages/presentation
+    path: packages/presentation
 
 
   # The following adds the Cupertino Icons font to your application.
