@@ -51,10 +51,10 @@ packages:
     source: hosted
     version: "1.0.4"
   domain:
-    dependency: transitive
+    dependency: "direct main"
     description:
-      path: "/Users/dmitrij/develop/newpaliApp/packages/domain"
-      relative: false
+      path: "../domain"
+      relative: true
     source: path
     version: "1.0.0+1"
   fake_async:
@@ -116,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  presentation:
-    dependency: "direct main"
-    description:
-      path: "/Users/dmitrij/develop/newpaliApp/packages/presentation"
-      relative: false
-    source: path
-    version: "1.0.0+1"
   sky_engine:
     dependency: transitive
     description: flutter
