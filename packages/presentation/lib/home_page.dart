@@ -1,7 +1,8 @@
-import 'package:domain/checking_if_palindrome.dart';
+import 'package:domain/palindrome_usecase.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:presentation/bloc/bloc_data.dart';
+import 'package:presentation/bloc/home_bloc.dart';
+import 'package:presentation/home_data.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -12,82 +13,82 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late TextEditingController _palindrome;
-  bool _result = true;
-  CheckingIfPalindrome checking = CheckingIfPalindrome();
+  HomeBloc bloc = HomeBloc(PalindromeUseCase());
 
   @override
   void initState() {
     super.initState();
-    _palindrome = TextEditingController();
-
+    bloc.initState();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _palindrome.dispose();
-
+  void _checkString() {
+    bloc.isPalindrome();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
-      body: Center(
+      body: StreamBuilder(
+          stream: bloc.dataStream,
+          initialData: BlocData.init(),
+          builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+            final blocData = snapshot.data;
+            if (blocData is BlocData) {
+              final screenData = blocData.data;
+              if (blocData.isLoading) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (screenData is HomeData) {
+                return _buildResult(screenData);
+              } else {
+                return Container(
+                  color: Colors.red,
+                );
+              }
+            } else {
+              return Container(
+                color: Colors.green,
+              );
+            }
+          }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _checkString,
+        child: const Icon(Icons.check_circle),
+      ),
+    );
+  }
+
+  Widget _buildResult(HomeData screenData) => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
               height: 50,
               width: 250,
-              padding:
-              const EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 color: Colors.black.withAlpha(20),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(20),
                 ),
               ),
-              child: TextField(
-                controller: _palindrome,
+              child: TextFormField(
+                onChanged: bloc.setPaliString,
                 style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   hintStyle: TextStyle(
                     color: Colors.black.withAlpha(120),
                   ),
-                  border: InputBorder.none,
                 ),
               ),
             ),
-            const SizedBox(height: 20,),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-              ),
-              child: const Text(
-                'check out',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 20),
-              ),
-              onPressed: () {
-                setState(() {
-                  _result = checking.isPanlindrome(_palindrome.text.trim().toLowerCase());
-                },);
-              },
+            const SizedBox(
+              height: 20,
             ),
-            const SizedBox(height: 15,),
-            Text(_result ? 'The String is palindrome' : 'The string is not palindrome',),
+            Text('Is palindrome: ${screenData.isPalindrome}'),
           ],
         ),
-      ),
-    );
-  }
+      );
 }

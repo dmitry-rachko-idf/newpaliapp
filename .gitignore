@@ -1,7 +1,3 @@
-packages/presentation/pubspec.lock
-packages/domain/pubspec.lock
-pubspec.lock
-
 # Miscellaneous
 *.class
 *.log
@@ -48,3 +44,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+packages/presentation/pubspec.lock
+packages/domain/pubspec.lock
+pubspec.lock
+
