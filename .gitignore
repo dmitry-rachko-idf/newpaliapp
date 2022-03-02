@@ -46,3 +46,9 @@ app.*.map.json
 /android/app/release
 */pubspec.lock
 
+packages/presentation/pubspec.lock
+packages/domain/pubspec.lock
+packages/data/pubspec.lock
+.vscode/launch.json
+
+pubspec.lock
