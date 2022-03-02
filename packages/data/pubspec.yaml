@@ -1,4 +1,4 @@
-name: domain
+name: data
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -12,11 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  domain:
+    path: ../domain
+ 
   get_it: ^7.2.0
-  injectable: ^1.5.3
-
   cupertino_icons: ^1.0.2
+  injectable: ^1.5.3
 
 dev_dependencies:
   flutter_test:

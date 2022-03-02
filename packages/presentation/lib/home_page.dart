@@ -1,6 +1,6 @@
-import 'package:domain/palindrome_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:presentation/bloc/bloc_data.dart';
+import 'package:presentation/bloc/bloc_state.dart';
 import 'package:presentation/bloc/home_bloc.dart';
 import 'package:presentation/home_data.dart';
 
@@ -12,9 +12,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  HomeBloc bloc = HomeBloc(PalindromeUseCase());
-
+class _MyHomePageState<D> extends BlocState<MyHomePage, HomeBloc> {
   @override
   void initState() {
     super.initState();
