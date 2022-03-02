@@ -1,7 +1,7 @@
 import 'package:domain/repository/network_repository.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+// @injectable
 class PalindromeUseCase {
   final INetworkRepository _repository;
 
