@@ -1,7 +1,5 @@
 import 'package:domain/repository/network_repository.dart';
-import 'package:injectable/injectable.dart';
 
-// @injectable
 class PalindromeUseCase {
   final INetworkRepository _repository;
 
@@ -11,7 +9,4 @@ class PalindromeUseCase {
     final response = await _repository.checkPalindrome(params);
     return Future.value(response.isPalindrome);
   }
-
-  @override
-  void dispose() {}
 }
