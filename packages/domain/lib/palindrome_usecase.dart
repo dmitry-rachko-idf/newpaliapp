@@ -11,7 +11,4 @@ class PalindromeUseCase {
     final response = await _repository.checkPalindrome(params);
     return Future.value(response.isPalindrome);
   }
-
-  @override
-  void dispose() {}
 }
