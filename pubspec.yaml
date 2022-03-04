@@ -16,15 +16,12 @@ dependencies:
     sdk: flutter
   presentation:
     path: packages/presentation
-  domain:
-    path: packages/domain
-  data:
-    path: packages/data
+ 
 
   cupertino_icons: ^1.0.2
  
   get_it: ^7.2.0
-  injectable: ^1.5.3
+  
  
 
 
@@ -34,8 +31,7 @@ dev_dependencies:
 
  
   flutter_lints: ^1.0.0
-  build_runner: ^2.1.7
-  injectable_generator: ^1.5.3
+ 
 
 
 flutter:
