@@ -52,3 +52,5 @@ packages/data/pubspec.lock
 .vscode/launch.json
 
 pubspec.lock
+
+*/injector.config.dart
