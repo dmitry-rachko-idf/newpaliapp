@@ -163,14 +163,14 @@ packages:
     source: hosted
     version: "2.2.1"
   data:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/data"
       relative: true
     source: path
     version: "1.0.0+1"
   domain:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/domain"
       relative: true
@@ -222,7 +222,7 @@ packages:
     source: hosted
     version: "2.1.2"
   get_it:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get_it
       url: "https://pub.dartlang.org"
@@ -257,7 +257,7 @@ packages:
     source: hosted
     version: "4.0.0"
   injectable:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: injectable
       url: "https://pub.dartlang.org"

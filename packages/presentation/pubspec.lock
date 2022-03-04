@@ -170,7 +170,7 @@ packages:
     source: path
     version: "1.0.0+1"
   domain:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../domain"
       relative: true
@@ -222,7 +222,7 @@ packages:
     source: hosted
     version: "2.1.2"
   get_it:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get_it
       url: "https://pub.dartlang.org"
