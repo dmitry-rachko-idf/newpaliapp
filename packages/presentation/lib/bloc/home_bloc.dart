@@ -1,8 +1,11 @@
 import 'package:domain/palindrome_usecase.dart';
+import 'package:injectable/injectable.dart';
 import 'package:presentation/bloc/base_bloc.dart';
 import 'package:presentation/home_data.dart';
 
+@injectable
 abstract class HomeBloc extends BaseBloc {
+  @factoryMethod
   factory HomeBloc(PalindromeUseCase palindromeUseCase) =>
       _HomeBloc(palindromeUseCase);
 
@@ -30,7 +33,7 @@ class _HomeBloc extends BlocImpl implements HomeBloc {
     updateData();
 
     _screenData.isPalindrome =
-        await _palindromeUseCase.isPalindrome(_screenData.stringInput);
+        await _palindromeUseCase(_screenData.stringInput);
 
     _isLoading = false;
     updateData();
