@@ -1,9 +1,7 @@
-name: newpaliapp
+name: data
 description: A new Flutter project.
 
-
 publish_to: 'none' 
-
 
 version: 1.0.0+1
 
@@ -14,17 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  presentation:
-    path: packages/presentation
-
-
-
+  domain:
+    path: ../domain
+ 
 
   cupertino_icons: ^1.0.2
- 
-
- 
-
+  injectable: ^1.5.3
 
 dev_dependencies:
   flutter_test:
@@ -32,9 +25,12 @@ dev_dependencies:
 
 
   flutter_lints: ^1.0.0
-
+  build_runner: ^2.1.7
+  injectable_generator: ^1.5.3
 
 
 flutter:
 
+
   uses-material-design: true
+
